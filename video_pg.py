@@ -99,8 +99,8 @@ def loop():
 		for (x, y, w, h) in faces:
 			# text = fontObj.render('Face', True, (200,100,100))
 			# screen.blit(text, (x, y))
-			grass_new = pygame.transform.scale(grass, (w, h))
-			screen.blit(grass_new, (x, y))
+			# grass_new = pygame.transform.scale(grass, (w, h))
+			# screen.blit(grass_new, (x, y))
 
 			face_detector.draw_one(frame, (x, y, w, h), (200, 100, 100))
 		# 	# face_center = [(x + w / 2.) / window_width, (y + h / 2.) / window_height]
@@ -152,8 +152,8 @@ def loop():
 
 			lower_third_gray = gray[y + h / 3:y + h, x:x + w]
 			lower_third_color = frame[y + h / 3:y + h, x:x + w]
-			nose_detector.detect(lower_third_gray)
-			nose_detector.draw(lower_third_color, bgr=(250, 250, 250))
+			# nose_detector.detect(lower_third_gray)
+			# nose_detector.draw(lower_third_color, bgr=(250, 250, 250))
 			
 
 		# PYGAME SCREEN
@@ -161,7 +161,7 @@ def loop():
 		frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 		frame = np.rot90(frame)
 		frame = pygame.surfarray.make_surface(frame)
-		frame.set_alpha(100)
+		frame.set_alpha(200)
 		# frame.set_alpha(250)
 		screen.blit(frame, (0, 0))
 
